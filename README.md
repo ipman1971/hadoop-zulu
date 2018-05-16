@@ -1,11 +1,28 @@
-# Build
+# hadoop-zulu
+Imagen docker con Hadoop en modo pseudo distribuido
+
+## Construcción de image
 ```
-docker build . -t hadoop-zulu
+make
 ```
 
-# Run
+## Creación de un contenedor
 ```
+make run hostname=<hostname>
 docker run -it --rm -h "hadooptest" -p 8088:8088 -p 50070:50070 -p 50090:50090 hadoop-zulu
 ```
 
-### Referencia: https://github.com/mjaglan/docker-hadoop-pseudo-distributed-mode
+## Entrar en el contenedor
+```
+make attack
+```
+
+## Eliminación de un contenedor
+```
+make clean
+```
+
+## Eliminación de la imagen
+```
+make clean-image
+```
